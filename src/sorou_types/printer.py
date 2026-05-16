@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from collections import Counter
-
 from roots.sorou import Sorou
 
 from .model import CompositeType, PrimeType, SumType, Type
@@ -13,9 +11,15 @@ def format_type(t: Type) -> str:
     if isinstance(t, SumType):
         return " + ".join(format_type(part) for part in t.parts)
     if isinstance(t, CompositeType):
-        counts = Counter(t.subsidiary_types)
         parts = []
-        for subtype, count in sorted(counts.items(), key=lambda item: format_type(item[0])):
+        i = 0
+        while i < len(t.subsidiary_types):
+            subtype = t.subsidiary_types[i]
+            count = 1
+            i += 1
+            while i < len(t.subsidiary_types) and t.subsidiary_types[i] == subtype:
+                count += 1
+                i += 1
             rendered = format_type(subtype)
             parts.append(f"{count}{rendered}" if count > 1 else rendered)
         suffix = ", ".join(parts)
