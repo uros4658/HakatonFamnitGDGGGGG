@@ -1,0 +1,18 @@
+[
+  {
+    "weight": 17,
+    "type": "R17",
+    "top_prime": 17,
+    "relative_order": 17,
+    "possible_heights": [1],
+    "status": "conjectural"
+  },
+  {
+    "weight": 19,
+    "type": "R19",
+    "top_prime": 19,
+    "relative_order": 19,
+    "possible_heights": [1],
+    "status": "conjectural"
+  }
+]
