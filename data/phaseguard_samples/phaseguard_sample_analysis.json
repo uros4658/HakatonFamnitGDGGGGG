@@ -1,0 +1,336 @@
+{
+  "detected_groups": [
+    {
+      "component_indices": [
+        360,
+        720,
+        1080
+      ],
+      "confidence": 0.999997,
+      "frequencies": [
+        120.0,
+        240.0,
+        360.0
+      ],
+      "group_id": 1,
+      "phases": [
+        4.712387,
+        0.523595,
+        2.618
+      ],
+      "residual": 3e-06,
+      "root_indices": [
+        48,
+        5,
+        27
+      ]
+    },
+    {
+      "component_indices": [
+        361,
+        721,
+        1081
+      ],
+      "confidence": 0.99806,
+      "frequencies": [
+        120.333,
+        240.333,
+        360.333
+      ],
+      "group_id": 2,
+      "phases": [
+        1.570818,
+        3.665211,
+        5.759616
+      ],
+      "residual": 3e-06,
+      "root_indices": [
+        16,
+        37,
+        59
+      ]
+    },
+    {
+      "component_indices": [
+        359,
+        719,
+        1079
+      ],
+      "confidence": 0.998049,
+      "frequencies": [
+        119.667,
+        239.667,
+        359.667
+      ],
+      "group_id": 3,
+      "phases": [
+        1.57077,
+        3.665163,
+        5.759569
+      ],
+      "residual": 3e-06,
+      "root_indices": [
+        16,
+        37,
+        59
+      ]
+    }
+  ],
+  "dominant_components": [
+    {
+      "amplitude": 1.0,
+      "frequency": 120.0,
+      "index": 360,
+      "phase": 4.712387,
+      "root_index": 48
+    },
+    {
+      "amplitude": 0.809532,
+      "frequency": 240.0,
+      "index": 720,
+      "phase": 0.523595,
+      "root_index": 5
+    },
+    {
+      "amplitude": 0.666676,
+      "frequency": 360.0,
+      "index": 1080,
+      "phase": 2.618,
+      "root_index": 27
+    },
+    {
+      "amplitude": 0.500006,
+      "frequency": 119.667,
+      "index": 359,
+      "phase": 1.57077,
+      "root_index": 16
+    },
+    {
+      "amplitude": 0.500006,
+      "frequency": 120.333,
+      "index": 361,
+      "phase": 1.570818,
+      "root_index": 16
+    },
+    {
+      "amplitude": 0.40477,
+      "frequency": 239.667,
+      "index": 719,
+      "phase": 3.665163,
+      "root_index": 37
+    },
+    {
+      "amplitude": 0.40477,
+      "frequency": 240.333,
+      "index": 721,
+      "phase": 3.665211,
+      "root_index": 37
+    },
+    {
+      "amplitude": 0.333342,
+      "frequency": 360.333,
+      "index": 1081,
+      "phase": 5.759616,
+      "root_index": 59
+    },
+    {
+      "amplitude": 0.333342,
+      "frequency": 359.667,
+      "index": 1079,
+      "phase": 5.759569,
+      "root_index": 59
+    },
+    {
+      "amplitude": 0.285716,
+      "frequency": 735.0,
+      "index": 2205,
+      "phase": 5.112389,
+      "root_index": 52
+    },
+    {
+      "amplitude": 0.14286,
+      "frequency": 734.667,
+      "index": 2204,
+      "phase": 1.970773,
+      "root_index": 20
+    },
+    {
+      "amplitude": 0.14286,
+      "frequency": 735.333,
+      "index": 2206,
+      "phase": 1.97082,
+      "root_index": 20
+    },
+    {
+      "amplitude": 0.119048,
+      "frequency": 38.0,
+      "index": 114,
+      "phase": 4.71239,
+      "root_index": 48
+    },
+    {
+      "amplitude": 0.059525,
+      "frequency": 38.333,
+      "index": 115,
+      "phase": 1.570821,
+      "root_index": 16
+    },
+    {
+      "amplitude": 0.059525,
+      "frequency": 37.667,
+      "index": 113,
+      "phase": 1.570773,
+      "root_index": 16
+    },
+    {
+      "amplitude": 1.2e-05,
+      "frequency": 600.0,
+      "index": 1800,
+      "phase": 5.613576,
+      "root_index": 57
+    },
+    {
+      "amplitude": 8e-06,
+      "frequency": 480.0,
+      "index": 1440,
+      "phase": 4.759265,
+      "root_index": 48
+    },
+    {
+      "amplitude": 6e-06,
+      "frequency": 599.667,
+      "index": 1799,
+      "phase": 2.471934,
+      "root_index": 25
+    },
+    {
+      "amplitude": 6e-06,
+      "frequency": 600.333,
+      "index": 1801,
+      "phase": 2.472,
+      "root_index": 25
+    },
+    {
+      "amplitude": 6e-06,
+      "frequency": 255.0,
+      "index": 765,
+      "phase": 3.459027,
+      "root_index": 35
+    },
+    {
+      "amplitude": 6e-06,
+      "frequency": 1215.0,
+      "index": 3645,
+      "phase": 0.447349,
+      "root_index": 5
+    },
+    {
+      "amplitude": 5e-06,
+      "frequency": 720.0,
+      "index": 2160,
+      "phase": 0.96367,
+      "root_index": 10
+    },
+    {
+      "amplitude": 5e-06,
+      "frequency": 855.0,
+      "index": 2565,
+      "phase": 1.922372,
+      "root_index": 20
+    },
+    {
+      "amplitude": 5e-06,
+      "frequency": 615.0,
+      "index": 1845,
+      "phase": 2.064171,
+      "root_index": 21
+    },
+    {
+      "amplitude": 5e-06,
+      "frequency": 1080.0,
+      "index": 3240,
+      "phase": 3.677935,
+      "root_index": 37
+    },
+    {
+      "amplitude": 5e-06,
+      "frequency": 975.0,
+      "index": 2925,
+      "phase": 1.788407,
+      "root_index": 18
+    },
+    {
+      "amplitude": 4e-06,
+      "frequency": 495.0,
+      "index": 1485,
+      "phase": 2.150521,
+      "root_index": 22
+    },
+    {
+      "amplitude": 4e-06,
+      "frequency": 480.333,
+      "index": 1441,
+      "phase": 1.61774,
+      "root_index": 16
+    },
+    {
+      "amplitude": 4e-06,
+      "frequency": 479.667,
+      "index": 1439,
+      "phase": 1.617662,
+      "root_index": 16
+    },
+    {
+      "amplitude": 4e-06,
+      "frequency": 840.0,
+      "index": 2520,
+      "phase": 4.142102,
+      "root_index": 42
+    },
+    {
+      "amplitude": 3e-06,
+      "frequency": 1335.0,
+      "index": 4005,
+      "phase": 0.779931,
+      "root_index": 8
+    },
+    {
+      "amplitude": 3e-06,
+      "frequency": 1200.0,
+      "index": 3600,
+      "phase": 5.387362,
+      "root_index": 55
+    },
+    {
+      "amplitude": 3e-06,
+      "frequency": 1455.0,
+      "index": 4365,
+      "phase": 0.777039,
+      "root_index": 8
+    },
+    {
+      "amplitude": 3e-06,
+      "frequency": 1095.0,
+      "index": 3285,
+      "phase": 1.506983,
+      "root_index": 15
+    },
+    {
+      "amplitude": 3e-06,
+      "frequency": 135.0,
+      "index": 405,
+      "phase": 3.200963,
+      "root_index": 33
+    },
+    {
+      "amplitude": 3e-06,
+      "frequency": 375.0,
+      "index": 1125,
+      "phase": 2.419131,
+      "root_index": 25
+    }
+  ],
+  "duration_seconds": 3.0,
+  "mode": "python-fallback",
+  "sample_rate": 44100
+}
