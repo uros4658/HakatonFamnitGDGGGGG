@@ -9,7 +9,12 @@
       "PowerShell($env:PYTHONPATH = \"src\"; python -m cli.validate_known --max-weight 7 2>&1)",
       "PowerShell($env:PYTHONPATH = \"src\"; python -m cli.generate_table --max-weight 7 --format markdown 2>&1)",
       "PowerShell(\\(Get-Content C:\\\\ProjekatProg\\\\SoviceMaleneGDG\\\\README.md | Measure-Object -Line\\).Lines)",
-      "PowerShell(pip install *)"
+      "PowerShell(pip install *)",
+      "Bash(npx create-next-app@latest sea-oasis-citizen-monitor --ts --tailwind --eslint --app --use-npm --no-src-dir)",
+      "Bash(Select-Object -Last 20)",
+      "PowerShell(Stop-Process *)",
+      "PowerShell(\\(Get-Content \"C:\\\\ProjekatProg\\\\SoviceMaleneGDG\\\\pattern_catalog.py\" | Measure-Object -Line\\).Lines)",
+      "PowerShell(Get-ChildItem \"C:\\\\ProjekatProg\\\\SoviceMaleneGDG\\\\sea-oasis-citizen-monitor\\\\data\" | Select-Object Name, @{N='SizeKB';E={[math]::Round\\($_.Length/1024,1\\)}})"
     ]
   }
 }
