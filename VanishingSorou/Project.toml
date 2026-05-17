@@ -1,0 +1,9 @@
+name = "VanishingSorou"
+uuid = "3485bde6-1d44-4d64-aaf8-eb717b781ef4"
+version = "0.1.0"
+authors = ["Natalija Tashkova <vasilijevanja@gmail.com>"]
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]

@@ -1,0 +1,10 @@
+# This file is machine-generated - editing it directly is not advised
+
+julia_version = "1.12.6"
+manifest_format = "2.0"
+project_hash = "a1d28d09aaab2d68a5ede66c52ccd5d31a9e6454"
+
+[[deps.VanishingSorou]]
+path = "."
+uuid = "3485bde6-1d44-4d64-aaf8-eb717b781ef4"
+version = "0.1.0"
