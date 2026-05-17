@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { Bot, Send, Loader2, Trash2 } from "lucide-react";
+import MarkdownMessage from "@/components/MarkdownMessage";
 
 interface Message {
   role: "user" | "model";
@@ -107,13 +108,13 @@ export default function AdvisorPage() {
             className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
           >
             <div
-              className={`max-w-[80%] rounded-xl px-4 py-3 text-sm whitespace-pre-wrap ${
+              className={`max-w-[80%] rounded-xl px-4 py-3 text-sm ${
                 msg.role === "user"
-                  ? "bg-violet-600 text-white"
+                  ? "bg-violet-600 text-white whitespace-pre-wrap"
                   : "bg-slate-800 text-slate-200 border border-slate-700"
               }`}
             >
-              {msg.text}
+              {msg.role === "model" ? <MarkdownMessage text={msg.text} /> : msg.text}
             </div>
           </div>
         ))}
