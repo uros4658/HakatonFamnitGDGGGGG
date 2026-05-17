@@ -4,6 +4,7 @@ import { Camera, CheckCircle, XCircle, AlertTriangle, ChevronDown, ChevronUp } f
 import { createNewChecklist, calculateProgress } from "@/lib/checklist/checklistData";
 import { ChecklistItem, Checklist } from "@/lib/checklist/checklistSchema";
 import { saveChecklist, getSelectedRoute } from "@/lib/observations/storage";
+import { PhotoGrid } from "@/components/PhotoPlaceholder";
 import { useRouter } from "next/navigation";
 
 export default function ChecklistPage() {
@@ -104,6 +105,13 @@ export default function ChecklistPage() {
           <ItemRow key={item.id} item={item} onUpdate={updates => updateItem(item.id, updates)} />
         ))}
       </div>
+
+      {checklist.items.some(i => i.status === "captured" && i.photoPlaceholder) && (
+        <div className="space-y-2">
+          <h3 className="text-sm font-semibold text-slate-300">Captured Photos</h3>
+          <PhotoGrid items={checklist.items} />
+        </div>
+      )}
 
       {showWarning && (
         <div className="p-4 rounded-lg bg-red-900/30 border border-red-800 text-sm text-red-300">

@@ -8,7 +8,7 @@
       <div>{certificate}</div>
       <div className="text-slate-500">
         Minimality: {isMinimal ? "primitive / minimal" : "composite"}
-        {catalogType && ` � Catalog type: ${catalogType}`}
+        {catalogType && ` - Catalog type: ${catalogType}`}
       </div>
     </div>
   );

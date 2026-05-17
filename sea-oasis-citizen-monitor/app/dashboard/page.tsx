@@ -232,7 +232,7 @@ export default function DashboardPage() {
             {filtered.filter(o => o.followUpNeeded !== "none").map(o => (
               <div key={o.id} className="flex items-center gap-2 text-xs">
                 <span className="px-1.5 py-0.5 rounded bg-amber-900/50 text-amber-300">{o.followUpNeeded.replace(/_/g, " ")}</span>
-                <span className="text-slate-400">{o.date} � {o.observer}</span>
+                <span className="text-slate-400">{o.date} - {o.observer}</span>
                 {o.notes && <span className="text-slate-500 truncate max-w-[200px]">{o.notes}</span>}
               </div>
             ))}

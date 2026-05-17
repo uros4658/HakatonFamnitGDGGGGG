@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Waves, Compass, Camera, ClipboardList, BarChart3, FileText, BookOpen, Pi } from "lucide-react";
+import { Waves, Compass, Camera, ClipboardList, BarChart3, FileText, BookOpen, Pi, Bot } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
@@ -13,6 +13,7 @@ const NAV_ITEMS = [
   { href: "/report", label: "Report", icon: FileText },
   { href: "/guide", label: "Guide", icon: BookOpen },
   { href: "/math", label: "Math", icon: Pi },
+  { href: "/advisor", label: "AI Advisor", icon: Bot },
 ];
 
 export default function Navigation() {

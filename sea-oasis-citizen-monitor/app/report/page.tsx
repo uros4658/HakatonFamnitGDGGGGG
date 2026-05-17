@@ -63,7 +63,7 @@ export default function ReportPage() {
         <h2 className="font-semibold">SeaOasis Citizen Monitoring Report</h2>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-          <div><span className="text-slate-500">Date range:</span> <span>{months[0] || "�"} to {months[months.length - 1] || "�"}</span></div>
+          <div><span className="text-slate-500">Date range:</span> <span>{months[0] || "-"} to {months[months.length - 1] || "-"}</span></div>
           <div><span className="text-slate-500">Surveys:</span> <span>{observations.length}</span></div>
           <div><span className="text-slate-500">Observers:</span> <span>{observers.length}</span></div>
           <div><span className="text-slate-500">Repeatability:</span> <span>{repeatability}/100</span></div>
@@ -102,7 +102,7 @@ export default function ReportPage() {
               {followUps.map(o => (
                 <div key={o.id} className="text-xs text-slate-400">
                   {o.date} ({o.observer}): {o.followUpNeeded.replace(/_/g, " ")}
-                  {o.notes && ` � ${o.notes}`}
+                  {o.notes && ` - ${o.notes}`}
                 </div>
               ))}
             </div>
@@ -110,13 +110,40 @@ export default function ReportPage() {
         )}
       </div>
 
+      {checklists.length > 0 && (
+        <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-5 space-y-3">
+          <h3 className="text-sm font-semibold">Photo Checklist Summary</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            {checklists.slice(0, 4).map(cl => {
+              const captured = cl.items.filter(i => i.status === "captured").length;
+              const withPhoto = cl.items.filter(i => i.photoPlaceholder).length;
+              return (
+                <div key={cl.id} className="p-3 rounded-lg bg-slate-800/50 text-xs space-y-1">
+                  <div className="flex items-center justify-between">
+                    <span className="font-medium text-slate-300">{cl.observer} - {cl.date}</span>
+                    <span className="text-slate-500">{cl.completionPercentage}%</span>
+                  </div>
+                  <div className="text-slate-400">
+                    {captured}/{cl.items.length} captured, {withPhoto} with photo file
+                  </div>
+                  {cl.items.filter(i => i.photoPlaceholder).slice(0, 3).map(i => (
+                    <div key={i.id} className="text-slate-500 font-mono truncate">{i.photoPlaceholder}</div>
+                  ))}
+                  {withPhoto > 3 && <div className="text-slate-600">+{withPhoto - 3} more files</div>}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
       {warnings.length > 0 && (
         <div className="p-3 rounded-lg bg-amber-900/20 border border-amber-800 space-y-1">
           <div className="flex items-center gap-1.5 text-xs font-medium text-amber-300">
             <AlertTriangle size={12} /> Data Completeness Warnings
           </div>
           {warnings.map((w, i) => (
-            <div key={i} className="text-xs text-amber-400/80">� {w}</div>
+            <div key={i} className="text-xs text-amber-400/80">- {w}</div>
           ))}
         </div>
       )}

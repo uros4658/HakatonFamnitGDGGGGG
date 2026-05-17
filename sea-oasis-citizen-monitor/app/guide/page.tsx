@@ -3,15 +3,15 @@
 const GROUPS = [
   { name: "Fish", lookFor: "Schools, individuals near reef structure, juveniles in sheltered areas", photo: "Side-on from 1-2m distance, no flash, avoid chasing", dontDo: "Do not chase, corner, or feed fish", why: "Fish diversity and abundance indicate reef health" },
   { name: "Algae", lookFor: "Coverage on surfaces, color (green/brown/red), turf vs macro algae", photo: "Close-up of surface coverage, include scale reference if possible", dontDo: "Do not scrape or remove algae samples", why: "Algae balance indicates nutrient levels and grazing pressure" },
-  { name: "Bryozoans", lookFor: "Encrusting colonies on hard surfaces, fan or sheet shapes", photo: "Close-up showing colony structure and extent", dontDo: "Do not touch � colonies are fragile", why: "Bryozoan presence indicates good water quality and substrate stability" },
+  { name: "Bryozoans", lookFor: "Encrusting colonies on hard surfaces, fan or sheet shapes", photo: "Close-up showing colony structure and extent", dontDo: "Do not touch - colonies are fragile", why: "Bryozoan presence indicates good water quality and substrate stability" },
   { name: "Polychaetes", lookFor: "Tube structures, fan worms, visible feeding appendages", photo: "Photograph tubes/fans without disturbing sediment", dontDo: "Do not disturb surrounding sediment", why: "Polychaetes are key indicators of substrate colonization progress" },
   { name: "Seahorse", lookFor: "Attached to seagrass or structures, camouflaged, very still", photo: "From distance, no flash, minimal time near animal", dontDo: "Never touch, approach closely, or use flash. Protected species.", why: "Seahorse presence indicates high habitat quality. They are extremely sensitive to disturbance" },
-  { name: "Lobster", lookFor: "In crevices and under overhangs, nocturnal � look in shadows", photo: "Photograph from outside crevice, do not reach in", dontDo: "Do not reach into crevices or attempt to lure out", why: "Lobster presence indicates mature reef with adequate shelter" },
+  { name: "Lobster", lookFor: "In crevices and under overhangs, nocturnal - look in shadows", photo: "Photograph from outside crevice, do not reach in", dontDo: "Do not reach into crevices or attempt to lure out", why: "Lobster presence indicates mature reef with adequate shelter" },
   { name: "Seagrass", lookFor: "Meadow density, blade length, epiphyte load, bare patches", photo: "Wide shot showing meadow extent, close-up of blade condition", dontDo: "Do not drag equipment through seagrass", why: "Seagrass meadows are critical nursery habitat and carbon sinks" },
   { name: "Artificial reef growth", lookFor: "Coverage percentage on growth plates, species composition on surfaces", photo: "Standard angles: front, top, sides of each growth plate", dontDo: "Do not scrape or clean growth plates", why: "Tracks colonization progress and reef development over time" },
   { name: "Waste", lookFor: "Plastic, fishing line, metal, glass, abandoned gear", photo: "Document type, size, location relative to reef", dontDo: "Only collect if safe and not entangled with organisms", why: "Waste mapping enables targeted cleanup and prevention" },
-  { name: "Damage", lookFor: "Broken structures, anchor scars, dislodged elements, bleaching", photo: "Show extent and context of damage", dontDo: "Do not attempt repairs � report for expert assessment", why: "Damage documentation helps prioritize maintenance and identify causes" },
-  { name: "Unknown organism", lookFor: "Anything you cannot identify confidently", photo: "Multiple angles, show size relative to known object", dontDo: "Do not touch or collect. Mark for expert review.", why: "Could be rare, invasive, or indicator species � expert ID needed" },
+  { name: "Damage", lookFor: "Broken structures, anchor scars, dislodged elements, bleaching", photo: "Show extent and context of damage", dontDo: "Do not attempt repairs - report for expert assessment", why: "Damage documentation helps prioritize maintenance and identify causes" },
+  { name: "Unknown organism", lookFor: "Anything you cannot identify confidently", photo: "Multiple angles, show size relative to known object", dontDo: "Do not touch or collect. Mark for expert review.", why: "Could be rare, invasive, or indicator species - expert ID needed" },
 ];
 
 export default function GuidePage() {
@@ -27,12 +27,12 @@ export default function GuidePage() {
           <AlertTriangle size={16} /> Responsible Observation
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-300">
-          <div>Keep minimum distance � do not approach marine life</div>
+          <div>Keep minimum distance - do not approach marine life</div>
           <div>Never touch, move, or collect organisms</div>
-          <div>Avoid stirring sediment � maintain buoyancy</div>
+          <div>Avoid stirring sediment - maintain buoyancy</div>
           <div>Do not use flash if it disturbs animals</div>
           <div>Do not chase, corner, or feed any species</div>
-          <div>Report � do not attempt to fix damage yourself</div>
+          <div>Report - do not attempt to fix damage yourself</div>
         </div>
       </section>
 
@@ -71,7 +71,7 @@ export default function GuidePage() {
           <li>Record in observation form with severity rating</li>
           <li>Mark follow-up as &quot;cleanup needed&quot; or &quot;damage inspection&quot;</li>
           <li>Only collect loose waste if safe and not entangled with organisms</li>
-          <li>Never attempt structural repairs � report for expert assessment</li>
+          <li>Never attempt structural repairs - report for expert assessment</li>
         </ol>
       </section>
     </div>

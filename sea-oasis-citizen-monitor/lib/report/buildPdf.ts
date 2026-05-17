@@ -36,7 +36,7 @@ export function buildPdf(observations: Observation[]): jsPDF {
   const freq = computeTagFrequency(observations);
   const topTags = Object.entries(freq).sort(([, a], [, b]) => b - a).slice(0, 10);
   for (const [tag, count] of topTags) {
-    doc.text(`� ${tag}: ${count}`, 25, y); y += 5;
+    doc.text(`- ${tag}: ${count}`, 25, y); y += 5;
     if (y > 270) { doc.addPage(); y = 20; }
   }
   y += 5;
@@ -58,7 +58,7 @@ export function buildPdf(observations: Observation[]): jsPDF {
     doc.text("Follow-up Actions", 20, y); y += 8;
     doc.setFontSize(10);
     for (const obs of followUps) {
-      doc.text(`� ${obs.date} (${obs.observer}): ${obs.followUpNeeded}`, 25, y); y += 5;
+      doc.text(`- ${obs.date} (${obs.observer}): ${obs.followUpNeeded}`, 25, y); y += 5;
       if (y > 270) { doc.addPage(); y = 20; }
     }
   }

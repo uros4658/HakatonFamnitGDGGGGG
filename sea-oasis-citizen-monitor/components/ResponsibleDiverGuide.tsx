@@ -7,12 +7,12 @@ export function ResponsibleDiverGuide() {
         <AlertTriangle size={16} /> Responsible Observation
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-300">
-        <div>Keep minimum distance � do not approach marine life</div>
+        <div>Keep minimum distance - do not approach marine life</div>
         <div>Never touch, move, or collect organisms</div>
-        <div>Avoid stirring sediment � maintain buoyancy</div>
+        <div>Avoid stirring sediment - maintain buoyancy</div>
         <div>Do not use flash if it disturbs animals</div>
         <div>Do not chase, corner, or feed any species</div>
-        <div>Report � do not attempt to fix damage yourself</div>
+        <div>Report - do not attempt to fix damage yourself</div>
       </div>
     </div>
   );

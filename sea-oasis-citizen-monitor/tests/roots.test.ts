@@ -100,8 +100,8 @@ describe("roots of unity", () => {
 
   describe("formatCertificate", () => {
     test("formats correctly", () => {
-      expect(formatCertificate(8, [0, 4])).toBe("1 + ?_8^4 = 0");
-      expect(formatCertificate(4, [0, 1, 2, 3])).toBe("1 + ?_4^1 + ?_4^2 + ?_4^3 = 0");
+      expect(formatCertificate(8, [0, 4])).toBe("1 + zeta_8^4 = 0");
+      expect(formatCertificate(4, [0, 1, 2, 3])).toBe("1 + zeta_4^1 + zeta_4^2 + zeta_4^3 = 0");
     });
   });
 });

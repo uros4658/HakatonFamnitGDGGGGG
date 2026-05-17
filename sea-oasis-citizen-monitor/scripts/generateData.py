@@ -73,7 +73,7 @@ for n in [4, 6, 8, 12]:
             "exponents": exps,
             "directions": [dmap.get(k, f"d{k}") for k in exps],
             "isMinimal": True,
-            "certificate": " + ".join(f"?_{n}^{k}" for k in exps) + " = 0",
+            "certificate": " + ".join(f"zeta_{n}^{k}" for k in exps) + " = 0",
             "demoOnly": False
         })
 

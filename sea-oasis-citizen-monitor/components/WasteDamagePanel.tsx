@@ -24,7 +24,7 @@ export function WasteDamagePanel({ observations }: { observations: Observation[]
             <div key={o.id} className="flex items-center gap-2 text-xs">
               {o.wasteSeverity !== "none" && <span className="px-1.5 py-0.5 rounded bg-amber-900/50 text-amber-300">waste: {o.wasteSeverity}</span>}
               {o.damageSeverity !== "none" && <span className="px-1.5 py-0.5 rounded bg-red-900/50 text-red-300">damage: {o.damageSeverity}</span>}
-              <span className="text-slate-400">{o.date} � {o.observer}</span>
+              <span className="text-slate-400">{o.date} - {o.observer}</span>
             </div>
           ))}
         </div>

@@ -58,7 +58,7 @@ export default function PlannerPage() {
       </div>
       <p className="text-sm text-slate-400">
         Generate balanced primitive survey routes using roots-of-unity vanishing sums.
-        A balanced route has direction vectors that sum to zero � eliminating directional bias.
+        A balanced route has direction vectors that sum to zero - reducing directional bias.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 rounded-xl border border-slate-800 bg-slate-900/50">
@@ -132,14 +132,14 @@ export default function PlannerPage() {
               <div className="flex items-center gap-2 text-sm">
                 <span className="text-slate-400">Route:</span>
                 <span className="font-mono text-cyan-300">
-                  {route.directions.join(" ? ")}
+                  {route.directions.join(" -> ")}
                 </span>
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
                 <Stat label="Length" value={`${route.weight} steps`} />
                 <Stat label="Order N" value={String(route.order)} />
-                <Stat label="Type" value={route.catalogType || "�"} />
+                <Stat label="Type" value={route.catalogType || "-"} />
                 <Stat label="Target suitability" value={target} />
               </div>
 
@@ -147,14 +147,14 @@ export default function PlannerPage() {
                 <div>{route.certificate}</div>
                 <div className="mt-1 text-slate-500">
                   Minimality: {route.isMinimal ? "primitive / minimal" : "composite"}
-                  {route.catalogType && ` � Catalog type: ${route.catalogType}`}
+                  {route.catalogType && ` - Catalog type: ${route.catalogType}`}
                   {route.catalogEntryId && ` (${route.catalogEntryId})`}
                 </div>
               </div>
 
               <p className="text-xs text-slate-400">
                 This route is balanced (sum of direction vectors = 0), so repeated surveys
-                are less directionally biased. {route.isMinimal ? "It is primitive (minimal vanishing sum) � not decomposable into smaller balanced sub-routes." : ""}
+                are less directionally biased. {route.isMinimal ? "It is primitive (minimal vanishing sum) - not decomposable into smaller balanced sub-routes." : ""}
               </p>
 
               <div className="flex items-center gap-2 text-xs text-slate-500">

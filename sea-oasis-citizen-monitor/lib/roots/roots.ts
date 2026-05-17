@@ -2,8 +2,8 @@
  * Exact symbolic validation for vanishing sums of roots of unity.
  * Uses cyclotomic polynomial arithmetic instead of floating-point trig.
  *
- * Key insight: ?_N^a1 + ?_N^a2 + ... = 0 iff the polynomial
- * x^a1 + x^a2 + ... reduced modulo F_N(x) is the zero polynomial.
+ * Key insight: zeta_N^a1 + zeta_N^a2 + ... = 0 iff the polynomial
+ * x^a1 + x^a2 + ... reduced modulo Phi_N(x) is the zero polynomial.
  */
 
 const cyclotomicCache: Record<number, number[]> = {};
@@ -11,13 +11,13 @@ const cyclotomicCache: Record<number, number[]> = {};
 function computeCyclotomic(n: number): number[] {
   if (cyclotomicCache[n]) return cyclotomicCache[n];
 
-  // F_1(x) = x - 1
+  // Phi_1(x) = x - 1
   if (n === 1) {
     cyclotomicCache[1] = [-1, 1];
     return [-1, 1];
   }
 
-  // F_n(x) = (x^n - 1) / ?_{d|n, d<n} F_d(x)
+  // Phi_n(x) = (x^n - 1) / product_{d|n, d<n} Phi_d(x)
   let num = new Array(n + 1).fill(0);
   num[n] = 1;
   num[0] = -1; // x^n - 1
@@ -65,8 +65,8 @@ function polyMod(poly: number[], modulus: number[]): number[] {
 }
 
 /**
- * Exact check: does ?_N^a1 + ?_N^a2 + ... + ?_N^ak = 0?
- * Reduces the sum polynomial modulo F_N(x) and checks if remainder is zero.
+ * Exact check: does zeta_N^a1 + zeta_N^a2 + ... + zeta_N^ak = 0?
+ * Reduces the sum polynomial modulo Phi_N(x) and checks if remainder is zero.
  */
 export function isVanishing(n: number, exponents: number[]): boolean {
   const sumPoly = new Array(n).fill(0);
@@ -111,11 +111,11 @@ export function exponentToDirection(n: number, k: number): string {
 }
 
 export function formatCertificate(n: number, exponents: number[]): string {
-  const terms = exponents.map(k => k === 0 ? "1" : `?_${n}^${k}`);
+  const terms = exponents.map(k => k === 0 ? "1" : `zeta_${n}^${k}`);
   return terms.join(" + ") + " = 0";
 }
 
-/** Numeric check � only for visual display, not for validation decisions. */
+/** Numeric check - only for visual display, not for validation decisions. */
 export function numericSum(n: number, exponents: number[]): { re: number; im: number } {
   let re = 0, im = 0;
   for (const k of exponents) {

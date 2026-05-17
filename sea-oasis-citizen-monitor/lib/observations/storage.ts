@@ -1,5 +1,6 @@
 import { Observation } from "./schema";
 import { Checklist } from "../checklist/checklistSchema";
+import { MOCK_CHECKLISTS } from "../checklist/mockChecklists";
 
 const OBSERVATIONS_KEY = "seaOasis.observations";
 const CHECKLISTS_KEY = "seaOasis.checklists";
@@ -20,11 +21,12 @@ export function saveObservation(obs: Observation): void {
 export function getChecklists(): Checklist[] {
   if (typeof window === "undefined") return [];
   const raw = localStorage.getItem(CHECKLISTS_KEY);
-  return raw ? JSON.parse(raw) : [];
+  if (raw) return JSON.parse(raw);
+  return MOCK_CHECKLISTS;
 }
 
 export function saveChecklist(cl: Checklist): void {
-  const all = getChecklists();
+  const all = getChecklists().filter(c => !c.id.startsWith("cl-mock-"));
   const idx = all.findIndex(c => c.id === cl.id);
   if (idx >= 0) all[idx] = cl;
   else all.push(cl);

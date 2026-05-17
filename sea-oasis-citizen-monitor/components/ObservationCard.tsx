@@ -18,7 +18,7 @@ export function ObservationCard({ obs }: { obs: Observation }) {
       <div className="grid grid-cols-3 gap-2 text-xs text-slate-400">
         <span>{obs.locationType.replace(/_/g, " ")}</span>
         <span>{obs.visibility} vis.</span>
-        <span>growth: {obs.growthPlateScore || "�"}</span>
+        <span>growth: {obs.growthPlateScore || "-"}</span>
       </div>
     </div>
   );

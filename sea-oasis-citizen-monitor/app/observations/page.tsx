@@ -65,7 +65,7 @@ export default function ObservationsPage() {
   if (saved) {
     return (
       <div className="text-center py-16 space-y-4">
-        <div className="text-5xl">??</div>
+        <div className="text-5xl font-bold text-cyan-300">OK</div>
         <h2 className="text-xl font-bold text-emerald-400">Observation Saved!</h2>
         <p className="text-sm text-slate-400">Your data has been stored locally.</p>
         <div className="flex gap-3 justify-center">
@@ -176,10 +176,10 @@ export default function ObservationsPage() {
         <Field label="Growth plate coverage (0-3)">
           <select value={growthPlate} onChange={e => setGrowthPlate(e.target.value)} className="input-field w-full">
             <option value="unknown">Unknown</option>
-            <option value="0">0 � no visible growth</option>
-            <option value="1">1 � sparse growth</option>
-            <option value="2">2 � moderate growth</option>
-            <option value="3">3 � dense growth</option>
+            <option value="0">0 - no visible growth</option>
+            <option value="1">1 - sparse growth</option>
+            <option value="2">2 - moderate growth</option>
+            <option value="3">3 - dense growth</option>
           </select>
         </Field>
         <Field label="Waste severity">

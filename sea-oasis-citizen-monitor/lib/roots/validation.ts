@@ -27,5 +27,5 @@ export function validateRoute(order: number, exponents: number[]): ValidationRes
 }
 
 function formatCert(n: number, exps: number[]): string {
-  return exps.map(k => k === 0 ? "1" : `?_${n}^${k}`).join(" + ") + " = 0";
+  return exps.map(k => k === 0 ? "1" : `zeta_${n}^${k}`).join(" + ") + " = 0";
 }

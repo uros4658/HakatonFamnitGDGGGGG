@@ -149,7 +149,7 @@ for (const n of orders) {
       exponents: exps,
       directions: exps.map(k => dirs[k] || `d${k}`),
       isMinimal: minimal,
-      certificate: exps.map(k => k === 0 ? "1" : `?_${n}^${k}`).join(" + ") + " = 0",
+      certificate: exps.map(k => k === 0 ? "1" : `zeta_${n}^${k}`).join(" + ") + " = 0",
       demoOnly: false,
     });
   }
@@ -157,4 +157,4 @@ for (const n of orders) {
 
 const outPath = path.join(__dirname, "..", "data", "route_patterns.generated.json");
 fs.writeFileSync(outPath, JSON.stringify(routes, null, 2));
-console.log(`\nGenerated ${routes.length} route patterns ? ${outPath}`);
+console.log(`\nGenerated ${routes.length} route patterns -> ${outPath}`);

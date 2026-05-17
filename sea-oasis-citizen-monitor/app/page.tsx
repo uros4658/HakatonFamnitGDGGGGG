@@ -1,5 +1,5 @@
 ﻿import Link from "next/link";
-import { Compass, Camera, ClipboardList, BarChart3, Trash2, FileText } from "lucide-react";
+import { Compass, Camera, ClipboardList, BarChart3, Trash2, FileText, Bot } from "lucide-react";
 
 const MODULES = [
   { href: "/planner", label: "Plan balanced survey route", desc: "Generate primitive routes from roots-of-unity vanishing sums", icon: Compass, color: "bg-cyan-600" },
@@ -8,6 +8,7 @@ const MODULES = [
   { href: "/dashboard", label: "Track monthly changes", desc: "Biodiversity trends, growth plates, waste reports", icon: BarChart3, color: "bg-indigo-600" },
   { href: "/report", label: "Report waste or damage", desc: "Document environmental issues for cleanup prioritization", icon: Trash2, color: "bg-amber-600" },
   { href: "/report", label: "Export NGO report", desc: "CSV, JSON, or PDF for researchers and conservation groups", icon: FileText, color: "bg-emerald-600" },
+  { href: "/advisor", label: "Ask AI Marine Advisor", desc: "Get help identifying species, monitoring tips, and reef health insights", icon: Bot, color: "bg-violet-600" },
 ];
 
 export default function HomePage() {
@@ -26,7 +27,7 @@ export default function HomePage() {
           tags, monthly monitoring dashboards, and exportable reports.
         </p>
         <div className="mt-4 inline-block px-3 py-1 rounded-full bg-amber-900/50 text-amber-300 text-xs font-medium">
-          Hackathon prototype � Demo data only � Not an official YouSea product
+          Hackathon prototype - Demo data only - Not an official YouSea product
         </div>
       </section>
 
