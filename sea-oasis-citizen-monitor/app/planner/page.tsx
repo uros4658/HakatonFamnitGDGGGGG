@@ -23,6 +23,7 @@ export default function PlannerPage() {
   const [avoid, setAvoid] = useState("None");
   const [current, setCurrent] = useState("calm");
   const [operator, setOperator] = useState("diver");
+  const [stepMeters, setStepMeters] = useState(10);
   const [routes, setRoutes] = useState<RoutePattern[]>([]);
   const [copied, setCopied] = useState<string | null>(null);
 
@@ -104,6 +105,10 @@ export default function PlannerPage() {
             {OPERATORS.map(o => <option key={o} value={o}>{o}</option>)}
           </select>
         </Field>
+        <Field label="Step distance">
+          <input type="range" min={1} max={50} value={stepMeters} onChange={e => setStepMeters(Number(e.target.value))} className="w-full" />
+          <span className="text-xs text-slate-400">{stepMeters} m per step</span>
+        </Field>
       </div>
 
       <button onClick={generate} className="px-6 py-2.5 bg-cyan-600 hover:bg-cyan-500 rounded-lg font-medium transition-colors">
@@ -129,15 +134,18 @@ export default function PlannerPage() {
                 <span className="text-xs text-slate-500">#{i + 1}</span>
               </div>
 
-              <div className="flex items-center gap-2 text-sm">
+              <div className="flex items-center gap-2 text-sm flex-wrap">
                 <span className="text-slate-400">Route:</span>
                 <span className="font-mono text-cyan-300">
-                  {route.directions.join(" -> ")}
+                  {route.directions.map(d => `${d} ${stepMeters}m`).join(" → ")}
                 </span>
+              </div>
+              <div className="text-xs text-slate-500">
+                Total distance: {route.weight * stepMeters}m ({route.weight} steps × {stepMeters}m) · Net displacement: 0m (balanced)
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
-                <Stat label="Length" value={`${route.weight} steps`} />
+                <Stat label="Length" value={`${route.weight} steps · ${route.weight * stepMeters}m`} />
                 <Stat label="Order N" value={String(route.order)} />
                 <Stat label="Type" value={route.catalogType || "-"} />
                 <Stat label="Target suitability" value={target} />
