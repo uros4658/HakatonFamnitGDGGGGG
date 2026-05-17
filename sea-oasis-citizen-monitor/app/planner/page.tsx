@@ -1,9 +1,10 @@
 ﻿"use client";
 import { useState } from "react";
-import { Compass, Copy, Check, ArrowRight, Camera } from "lucide-react";
+import { Compass, Copy, Check, ArrowRight, Camera, Route } from "lucide-react";
 import { getBestRoutes, RoutePattern } from "@/lib/roots/routePatterns";
 import { setSelectedRoute } from "@/lib/observations/storage";
 import { useRouter } from "next/navigation";
+import { SO_PIRAN_STANDARD_3D_DRONE_ROUTE } from "@/lib/oasis/defaultDroneRoutes";
 
 const MODES = ["Quick", "Standard", "Detailed"];
 const TARGETS = ["Artificial reef perimeter", "Growth plates", "Seagrass meadow", "Cleanup/trash scan", "General biodiversity scan"];
@@ -51,6 +52,12 @@ export default function PlannerPage() {
     setTimeout(() => setCopied(null), 2000);
   }
 
+  function useSeaOasis3DRoute() {
+    setSelectedRoute(SO_PIRAN_STANDARD_3D_DRONE_ROUTE.id);
+    localStorage.setItem("seaOasis.routes.selectedRoute3D", JSON.stringify(SO_PIRAN_STANDARD_3D_DRONE_ROUTE));
+    router.push("/route-3d");
+  }
+
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-3">
@@ -61,6 +68,27 @@ export default function PlannerPage() {
         Generate balanced primitive survey routes using roots-of-unity vanishing sums.
         A balanced route has direction vectors that sum to zero - reducing directional bias.
       </p>
+
+      <div className="rounded-xl border border-cyan-900/70 bg-cyan-950/20 p-5">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div className="flex gap-3">
+            <Route className="mt-1 text-cyan-300" size={22} />
+            <div>
+              <h2 className="font-semibold text-slate-100">Use real Sea Oasis 3D drone route</h2>
+              <p className="mt-1 max-w-3xl text-xs text-slate-400">
+                Public Sea Oasis Piran coordinates, real published dimensions, animated descent,
+                roots-certified horizontal loop, growth plate targets, and route checklist export.
+              </p>
+            </div>
+          </div>
+          <button
+            onClick={useSeaOasis3DRoute}
+            className="flex items-center gap-1.5 rounded-lg bg-cyan-600 px-4 py-2 text-sm font-medium text-white hover:bg-cyan-500"
+          >
+            Open 3D route <ArrowRight size={14} />
+          </button>
+        </div>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 rounded-xl border border-slate-800 bg-slate-900/50">
         <Field label="Survey mode">

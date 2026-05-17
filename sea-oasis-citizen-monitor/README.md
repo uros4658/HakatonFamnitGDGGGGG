@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SeaOasis Citizen Monitor
 
-## Getting Started
+## Problem Statement
 
-First, run the development server:
+Marine biodiversity monitoring often depends on repeated underwater observations, photos, and survey notes. For citizen scientists, this can be difficult to do consistently: routes may vary, required photo targets can be missed, and observations are hard to compare over time.
+
+Sea Oasis Piran also needs a clear way to visualize survey routes around the underwater structure using public location and dimension data, while keeping the workflow understandable for non-expert users.
+
+## Solution
+
+SeaOasis Citizen Monitor is a web app for planning, collecting, and reviewing structured underwater monitoring data.
+
+The app includes:
+
+- A survey route planner based on balanced direction patterns.
+- A 3D Sea Oasis Piran route planner with animated drone movement.
+- Real Sea Oasis Piran anchor coordinates and public structure dimensions.
+- Photo checklist generation for required survey captures.
+- Observation entry, dashboard views, reports, and export tools.
+- An AI marine advisor for practical monitoring questions.
+
+The 3D route module lets users choose route options, preview drone movement around the structure, inspect depth changes, view waypoint details, and send the selected route into the checklist flow.
+
+## Technologies Used
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Three.js
+- React Three Fiber
+- Drei
+- Recharts
+- Zod
+- jsPDF
+- Gemini API route for the AI advisor
+
+## Setup Instructions
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create an optional `.env.local` file for the AI advisor:
+
+```bash
+GEMINI_API_KEY=your_api_key_here
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the app:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Useful commands:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+npm run lint
+npm run test
+```

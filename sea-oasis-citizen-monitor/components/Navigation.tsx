@@ -1,12 +1,13 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Waves, Compass, Camera, ClipboardList, BarChart3, FileText, BookOpen, Pi, Bot } from "lucide-react";
+import { Waves, Compass, Camera, ClipboardList, BarChart3, FileText, BookOpen, Pi, Bot, Route } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
   { href: "/", label: "Home", icon: Waves },
   { href: "/planner", label: "Planner", icon: Compass },
+  { href: "/route-3d", label: "3D Drone Route", icon: Route },
   { href: "/checklist", label: "Checklist", icon: Camera },
   { href: "/observations", label: "Observations", icon: ClipboardList },
   { href: "/dashboard", label: "Dashboard", icon: BarChart3 },
